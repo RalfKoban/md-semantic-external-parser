@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser", "Parser\Parser.csproj", "{7CA3948C-600D-44E7-A814-CA5AD0E114BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{D72A5BAD-0C81-4589-8D67-E79080D755E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github", "Github", "{7D145D3F-8350-4141-9348-ABBEA6FE92EF}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CA3948C-600D-44E7-A814-CA5AD0E114BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA3948C-600D-44E7-A814-CA5AD0E114BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA3948C-600D-44E7-A814-CA5AD0E114BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA3948C-600D-44E7-A814-CA5AD0E114BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D72A5BAD-0C81-4589-8D67-E79080D755E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D72A5BAD-0C81-4589-8D67-E79080D755E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D72A5BAD-0C81-4589-8D67-E79080D755E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D72A5BAD-0C81-4589-8D67-E79080D755E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6C6DF3F-4B87-4C08-830E-AAF80F654772}
+	EndGlobalSection
+EndGlobal
