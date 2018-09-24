@@ -4,7 +4,7 @@ A semantic external parser for Markdown files that can be used together with [GM
 How to use it with GMaster is documented [here](http://blog.gmaster.io/2018/03/using-external-parsers-with-gmaster.html).
 
 ## Build status
-[![Build status](https://ci.appveyor.com/api/projects/status/9dnbofw2gpedfiaa?svg=true)](https://ci.appveyor.com/project/RalfKoban/md-semantic-external-parser/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/3ekq0fb7glbe8nr4/branch/master?svg=true)](https://ci.appveyor.com/project/RalfKoban/md-semantic-external-parser/branch/master)
 [![codecov](https://codecov.io/gh/RalfKoban/md-semantic-external-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/RalfKoban/md-semantic-external-parser)
 
 [![Build history](https://buildstats.info/appveyor/chart/RalfKoban/md-semantic-external-parser)](https://ci.appveyor.com/project/RalfKoban/md-semantic-external-parser/history)
