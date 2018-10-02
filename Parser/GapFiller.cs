@@ -26,26 +26,32 @@ namespace MiKoSolutions.SemanticParsers.MarkDown
 
         private static void AdjustNode(IList<ContainerOrTerminalNode> parentChildren, int indexInParentChildren, CharacterPositionFinder finder)
         {
+            var child = parentChildren[indexInParentChildren];
+
             if (indexInParentChildren < parentChildren.Count - 1)
             {
-                var child = parentChildren[indexInParentChildren];
                 var nextSibling = parentChildren[indexInParentChildren + 1];
 
                 var indexBefore = finder.GetCharacterPosition(nextSibling.LocationSpan.Start) - 1;
                 var newEndPos = finder.GetLineInfo(indexBefore);
 
                 child.LocationSpan = new LocationSpan(child.LocationSpan.Start, newEndPos);
+            }
 
-                if (child is Container c)
-                {
-                    AdjustChildren(c, finder);
-                }
-                else if (child is TerminalNode t)
-                {
-                    var start = finder.GetCharacterPosition(t.LocationSpan.Start);
-                    var end = finder.GetCharacterPosition(t.LocationSpan.End);
-                    t.Span = new CharacterSpan(start, end);
-                }
+            if (child is Container c)
+            {
+                var start = c.HeaderSpan.End + 1;
+
+                AdjustChildren(c, finder);
+
+                var end = finder.GetCharacterPosition(c.LocationSpan.End);
+                c.FooterSpan = new CharacterSpan(start, end);
+            }
+            else if (child is TerminalNode t)
+            {
+                var start = finder.GetCharacterPosition(t.LocationSpan.Start);
+                var end = finder.GetCharacterPosition(t.LocationSpan.End);
+                t.Span = new CharacterSpan(start, end);
             }
         }
     }

@@ -145,6 +145,19 @@ namespace MiKoSolutions.SemanticParsers.MarkDown
                                     FooterSpan = GetFooterSpan(block),
                                 };
 
+            if (block is ListBlock list)
+            {
+                foreach (var listItem in list)
+                {
+                    var item = ParseBlock(listItem, finder, textProvider);
+                    container.Children.Add(item);
+                }
+            }
+
+            // TODO: RKN
+            // - Table
+            // - ListBlock
+
             // check whether we can use a terminal node instead
             var child = FinalAdjustAfterParsingComplete(container);
 
@@ -162,7 +175,7 @@ namespace MiKoSolutions.SemanticParsers.MarkDown
 
         private static CharacterSpan GetCharacterSpan(MarkdownObject mdo) => new CharacterSpan(mdo.Span.Start, mdo.Span.End);
 
-        private static CharacterSpan GetHeaderSpan(MarkdownObject mdo) => new CharacterSpan(mdo.Span.Start, mdo.Span.Start + mdo.Span.Length);
+        private static CharacterSpan GetHeaderSpan(MarkdownObject mdo) => new CharacterSpan(mdo.Span.Start, mdo.Span.Start); // TODO: RKN + mdo.Span.Length);
 
         private static CharacterSpan GetFooterSpan(MarkdownObject mdo) => new CharacterSpan(mdo.Span.End, mdo.Span.End);
 
@@ -189,7 +202,7 @@ namespace MiKoSolutions.SemanticParsers.MarkDown
                     : type;
         }
 
-        private static ContainerOrTerminalNode FinalAdjustAfterParsingComplete(Container container) => container.ToTerminalNode();
+        private static ContainerOrTerminalNode FinalAdjustAfterParsingComplete(Container container) => container;
 
         private sealed class TextProvider
         {
